@@ -1,0 +1,11 @@
+$inline-padding: 20px;
+$content-width: 1440px;
+
+.container {
+  max-width: calc($content-width + ($inline-padding * 2));
+  margin: 0 auto;
+
+  &--fluid {
+    max-width: 100%;
+  }
+}

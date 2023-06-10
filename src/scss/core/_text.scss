@@ -1,0 +1,9 @@
+@mixin text-line-clamp($count: 2) {
+  @supports (-webkit-box-orient: vertical) {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
