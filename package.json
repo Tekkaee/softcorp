@@ -1,0 +1,41 @@
+{
+  "name": "softcorp",
+  "version": "1.0.0",
+  "description": "Test task for Softcorp",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tekkaee/softcorp.git"
+  },
+  "keywords": [
+    "html",
+    "sass",
+    "js",
+    "test"
+  ],
+  "author": "Valeriy Sascheko (tekkaee)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tekkaee/softcorp/issues"
+  },
+  "homepage": "https://github.com/Tekkaee/softcorp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.63.3"
+  },
+  "dependencies": {
+    "gulp-htmlmin": "^5.0.1"
+  }
+}
