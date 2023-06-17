@@ -145,6 +145,7 @@ input[type=checkbox] ~ label {
     transform: scale(0);
     transition: all .2s ease;
     transform-origin: top right;
+    padding-bottom: env(safe-area-inset-bottom, 0);
 
     .header__trigger:checked ~ & {
       transform: scale(1);

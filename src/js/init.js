@@ -9,6 +9,7 @@ function initForm() {
     const fileInputs = document.querySelectorAll('input[type=file]')
     const form = document.getElementById('form-order')
     const selectValue = document.querySelectorAll('.select__value')
+    const defaultValues = document.querySelectorAll('.form-order__value')
 
     rangeInputs.forEach((input) => {
         const viewValue = input.previousSibling
@@ -58,6 +59,10 @@ function initForm() {
             })
 
             selectValue.forEach((value) => {
+                value.innerHTML = `${value.dataset.default}`
+            })
+
+            defaultValues.forEach((value) => {
                 value.innerHTML = `${value.dataset.default}`
             })
         })
