@@ -11,6 +11,7 @@ header {
   background-color: rgba($primary-100, .9);
   z-index: 2;
   display: flex;
+  transition: all .2s;
 
   @include desktop-and-laptop {
     min-height: $header-height-desktop;
@@ -146,7 +147,7 @@ input[type=checkbox] ~ label {
 
 .header__navigation {
   @include mobile-only {
-    height: calc(100vh - $header-height-mobile - env(safe-area-inset-bottom, 0));
+    height: calc(100vh - $header-height-mobile);
     width: 100vw;
     position: absolute;
     left: 0;

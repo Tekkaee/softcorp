@@ -7,13 +7,14 @@
 
 .footer {
   background-color: $primary-70;
+  transition: padding .2s;
 
   @include desktop-and-laptop {
     padding: 30px 0;
   }
 
   @include mobile-only {
-    padding: 14px 0;
+    padding: 14px 0 calc(14px + env(safe-area-inset-bottom, 0));
   }
 }
 
