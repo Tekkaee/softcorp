@@ -1,22 +1,189 @@
 @import "../core";
 
+$header-height-desktop: 100px;
+$header-height-mobile: 70px;
+
 header {
-  color: $primary-10;
-  font-size: 14px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  
-  @include desktop {
-    background-color: #000;
+  background-color: rgba($primary-100, .9);
+  z-index: 2;
+  display: flex;
+
+  @include desktop-and-laptop {
+    min-height: $header-height-desktop;
   }
-  
-  @include laptop {
-    background-color: red;
+
+  @include mobile-only {
+    min-height: $header-height-mobile;
   }
-  
-  @include mobile {
-    background-color: #eee;
+}
+
+.header__container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: 'Raleway', sans-serif;
+
+  &:is(:not(&--accent)) {
+    color: $white-100;
+  }
+
+  &--accent {
+    color: #42A9ED;
+  }
+}
+
+.navigation__list {
+  display: flex;
+
+  @include desktop-and-laptop {
+    gap: 60px;
+  }
+
+  @include mobile-only {
+    background: rgba(0,0,0, .9);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+.navigation__item {
+  color: $white-100;
+  transition: color .2s, top .2s;
+  position: relative;
+
+  &--active {
+    color: $accent-70;
+  }
+
+  &:hover {
+    @include desktop-and-laptop {
+      color: $accent-70;
+    }
+  }
+}
+
+.navigation__link {
+  color: inherit;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include desktop-and-laptop {
+    font-size: 13px;
+    line-height: calc(15.6 / 13);
+  }
+
+  @include mobile-only {
+    font-size: 24px;
+    line-height: calc(28 / 14);
+  }
+}
+
+input[type=checkbox],
+input[type=checkbox] ~ label {
+  @include desktop-and-laptop {
+    display: none;
+  }
+}
+
+.burger {
+  width: 48px;
+  height: 48px;
+  position: relative;
+
+  .burger__button--opened,
+  .burger__button--closed {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: .2s;
+    }
+}
+
+.burger__button {
+  width: inherit;
+  height: inherit;
+  display: block;
+  color: $white-100;
+  position: relative;
+
+  .header__trigger:checked ~ .header__burger & {
+    &.burger__button--closed {
+      opacity: 0;
+    }
+
+    &.burger__button--opened {
+      opacity: 1;
+    }
+  }
+
+  .header__trigger:not(:checked) ~ .header__burger & {
+    &.burger__button--closed {
+      opacity: 1;
+    }
+
+    &.burger__button--opened {
+      opacity: 0;
+    }
+  }
+}
+
+.header__navigation {
+  @include mobile-only {
+    height: calc(100vh - $header-height-mobile - env(safe-area-inset-bottom, 0));
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: scale(0);
+    transition: all .2s ease;
+    transform-origin: top right;
+
+    .header__trigger:checked ~ & {
+      transform: scale(1);
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes burger-init {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }

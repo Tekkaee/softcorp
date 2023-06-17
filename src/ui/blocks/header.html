@@ -1,4 +1,35 @@
 <header class="header">
-    <div class="container">
+    <div class="container header__container">
+        <a href="#" class="logo header__logo">LoremIpsum<span class="logo--accent">.Net</span></a>
+
+        <input type="checkbox" id="burger" name="burger" class="header__trigger">
+
+        <label for="burger" class="burger header__burger">
+            <svg class="icon burger__button burger__button--opened" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon burger__button burger__button--closed" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 7H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 17H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </label>
+        <nav class="navigation header__navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item navigation__item--active">
+                    <a href="#" class="navigation__link">Бизнес</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">О нас</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Цены</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Оформить заказ</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </header>
