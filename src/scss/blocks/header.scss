@@ -31,18 +31,8 @@ header {
 }
 
 .logo {
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-family: 'Raleway', sans-serif;
-
-  &:is(:not(&--accent)) {
-    color: $white-100;
-  }
-
-  &--accent {
-    color: #42A9ED;
-  }
+  width:245px;
+  height: 21px;
 }
 
 .navigation__list {
