@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Tekkaee/softcorp/issues"
   },
-  "homepage": "https://github.com/Tekkaee/softcorp#readme",
+  "homepage": "https://tekkaee.github.io/softcorp",
   "devDependencies": {
     "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
