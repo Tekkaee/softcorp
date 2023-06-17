@@ -65,7 +65,11 @@
   }
 }
 
-.welcome__list {
+.list-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   @include desktop-and-laptop {
     font-size: 20px;
     line-height: calc(24 / 20);
@@ -77,15 +81,11 @@
   }
 }
 
-.welcome__list-title {
+.list-welcome__title {
   font-weight: 700;
-
-  & + .welcome__item {
-    margin-top: 10px;
-  }
 }
 
-.welcome__item {
+.list-welcome__item {
   &::before {
     content: '-';
     padding: 10px;
