@@ -364,7 +364,6 @@ $form-gap-mobile: 20px;
   -moz-transform: translate3d(0, 0, 0);
 
   filter: blur(5px);
-  top: 5px;
 
   transition: .3s ease;
 
@@ -378,7 +377,6 @@ $form-gap-mobile: 20px;
 
   .in-view & {
     filter: blur(0);
-    top: 0;
   }
 }
 
