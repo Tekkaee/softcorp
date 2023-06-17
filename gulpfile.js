@@ -144,3 +144,7 @@ function staticFiles() {
 const dev = series(createDir, cleanAll, styles, images, fonts, scripts, staticFiles, devServer);
 dev.displayName = 'dev';
 export {dev};
+
+const prod = series(createDir, cleanAll, styles, images, fonts, scripts, staticFiles);
+prod.displayName = 'prod';
+export {prod};
