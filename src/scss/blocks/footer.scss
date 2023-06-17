@@ -1,5 +1,92 @@
 @import "../core";
 
-footer {
-  background-color: #fff;
+%text {
+  font-size: 13px;
+  line-height: 15.6px;
+}
+
+.footer {
+  background-color: $primary-70;
+
+  @include desktop-and-laptop {
+    padding: 30px 0;
+  }
+
+  @include mobile-only {
+    padding: 14px 0;
+  }
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+
+  @include laptop-and-mobile {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @include laptop-only {
+    justify-content: center;
+  }
+}
+
+.footer__group {
+  & + & {
+    @include desktop-only {
+      border-left: 1px solid $divider;
+      padding-left: 40px;
+    }
+  }
+
+  &:not(:last-child) {
+    @include desktop-and-laptop {
+      padding-right: 40px;
+    }
+  }
+
+  &:first-child {
+    @include laptop-and-mobile {
+      order: 1;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.footer__list {
+  display: flex;
+
+  @include desktop-and-laptop {
+    gap: 38px;
+  }
+
+  @include mobile-only {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.footer__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  @extend %text;
+  color: $text-20;
+}
+
+a.footer__item {
+  color: $white-100;
+}
+
+.footer__copyright {
+  color: $white-100;
+  @extend %text;
 }
