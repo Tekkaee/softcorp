@@ -1,20 +1,38 @@
 $desktop: 1024px;
 $mobile: 767px;
 
-@mixin desktop {
+@mixin desktop-and-laptop {
+  @media screen and (min-width: $mobile + 1) {
+    @content;
+  }
+}
+
+@mixin laptop-and-mobile {
+  @media screen and (max-width: $desktop - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
   @media screen and (min-width: $desktop) {
     @content;
   }
 }
 
-@mixin laptop {
+@mixin laptop-only {
   @media screen and (min-width: $mobile + 1) and (max-width: $desktop - 1) {
     @content;
   }
 }
 
-@mixin mobile {
+@mixin mobile-only {
   @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin order-steps-fix {
+  @media screen and (min-width: 1205px) {
     @content;
   }
 }
