@@ -3,12 +3,12 @@
 .order {
   @include desktop-and-laptop {
     padding: 120px 0 150px;
-    background: $text-80 url('/assets/images/order-bg-desktop.png');
+    background: $text-80 url('../assets/images/order-bg-desktop.png');
   }
 
   @include mobile-only {
     padding: 60px 0 40px;
-    background: $text-80 url('/assets/images/order-bg-mobile.png');
+    background: $text-80 url('../assets/images/order-bg-mobile.png');
   }
 }
 
