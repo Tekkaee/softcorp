@@ -187,7 +187,6 @@ const observe = (select) => {
     }
 
     if (opened) {
-        console.warn(`OPENED ${shouldBeOpenedToTop} ${currentMode}`)
         if(shouldBeOpenedToTop && currentMode === 'bottom') {
 
             select.classList.remove(openedBottomClass.substring(1))
