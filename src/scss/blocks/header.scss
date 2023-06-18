@@ -50,6 +50,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    padding-bottom: calc($header-height-mobile + env(safe-area-inset-bottom, 0));
   }
 }
 
@@ -145,7 +146,6 @@ input[type=checkbox] ~ label {
     transform: scale(0);
     transition: all .2s ease;
     transform-origin: top right;
-    padding-bottom: calc($header-height-mobile + env(safe-area-inset-bottom, 0));
 
     .header__trigger:checked ~ & {
       transform: scale(1);
