@@ -1,6 +1,9 @@
 # Softcorp
 Test task for Softcorp
 
+#### Github pages link
+https://tekkaee.github.io/softcorp/
+
 ## Notes
 new components html put in ```src/ui/blocks```
 new content html put in ```src/ui/pages```
@@ -30,7 +33,7 @@ npm run prod
 ```
 
 ## Google page speed
-Desktop test
+### Desktop test
 ![Screenshot](desktop.png)
-Mobile test
+### Mobile test
 ![Screenshot](mobile.png)
