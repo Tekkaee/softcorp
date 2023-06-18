@@ -114,6 +114,10 @@ function cleanJs() {
     return src('./dist/js').pipe(clean({read: false}))
 }
 
+function favicon() {
+    return src('./src/favicon.ico').pipe(dest('./dist'))
+}
+
 function cleanAssets() {
     return src('./dist/assets').pipe(clean({read: false}))
 }
@@ -145,6 +149,6 @@ const dev = series(createDir, cleanAll, styles, images, fonts, scripts, staticFi
 dev.displayName = 'dev';
 export {dev};
 
-const prod = series(createDir, cleanAll, styles, images, fonts, scripts, staticFiles);
+const prod = series(createDir, cleanAll, styles, images, fonts, scripts, staticFiles, favicon);
 prod.displayName = 'prod';
 export {prod};
