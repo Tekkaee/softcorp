@@ -4,6 +4,8 @@ let opened = false;
 const openedTopClass = '.select__input--opened-top'
 const openedBottomClass = '.select__input--opened-bottom'
 
+let functionLink = null
+
 document.addEventListener("DOMContentLoaded", function() {
     const selects = document.querySelectorAll('select')
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     customSelect.classList.remove(openedBottomClass.substring(1))
                 }
-                window.removeEventListener('scroll', () => observe(customSelect))
+                window.removeEventListener('scroll', functionLink)
             } else {
                 opened = true;
 
@@ -36,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     customSelect.classList.add(openedBottomClass.substring(1))
                 }
 
-                window.addEventListener('scroll', () => observe(customSelect))
+                functionLink = observe.bind(window, customSelect)
+
+                window.addEventListener('scroll', functionLink)
             }
         })
 
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 select.value = e.target.dataset.value
                 selectValueElement.innerHTML = `${e.target.dataset.value}`
                 customSelect.classList.remove(currentMode === 'top' ? openedTopClass.substring(1) : openedBottomClass.substring(1))
-                window.removeEventListener('scroll', () => observe(select))
+                window.removeEventListener('scroll', functionLink)
 
                 opened = false;
             })
@@ -75,7 +79,7 @@ const outsideClick = (parent, select) => {
     })
 }
 
-const observe = (select) => {
+function observe(select) {
     const paramsEl = select.getBoundingClientRect()
     let selectHeight = select.offsetHeight
     let shouldBeOpenedToTop = (paramsEl.top + (selectHeight / 2)) > (document.documentElement.clientHeight / 1.5)
@@ -86,7 +90,7 @@ const observe = (select) => {
         select.classList.remove(openedTopClass.substring(1))
         select.classList.remove(openedBottomClass.substring(1))
         opened = false;
-        window.removeEventListener('scroll', () => observe(select))
+        window.removeEventListener('scroll', functionLink)
         return;
     }
 
