@@ -75,6 +75,7 @@ const outsideClick = (parent, select) => {
                 select.classList.remove(openedBottomClass.substring(1))
             }
             opened = false;
+            window.removeEventListener('scroll', functionLink)
         }
     })
 }
