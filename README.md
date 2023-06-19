@@ -34,6 +34,6 @@ npm run prod
 
 ## Google page speed
 ### Desktop test
-![Screenshot](desktop.png)
+![Screenshot](desktop-test.png)
 ### Mobile test
-![Screenshot](mobile.png)
+![Screenshot](mobile-test.png)
