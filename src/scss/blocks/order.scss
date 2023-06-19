@@ -326,6 +326,9 @@ $form-gap-mobile: 20px;
 
 .form-order__file {
   flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: calc(18 / 15);
 }
 
 .form-order__placeholder {
